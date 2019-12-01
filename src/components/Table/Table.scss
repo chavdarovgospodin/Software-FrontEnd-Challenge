@@ -23,20 +23,27 @@ table {
   height: 41px;
   margin-left: auto;
   margin-right: auto;
-  // text-align: left;
+
   td,
   th {
-    // border: 1px solid #dddddd;
+    text-align: center;
     text-align: left;
     padding: 8px;
   }
-
-  th:last-child {
-    float: right;
+  tr th {
+    text-align: center;
   }
-  tr {
-    td:last-child {
-      float: right;
+  tr td {
+    text-align: center;
+    align-items: center;
+  }
+  tr td:nth-child(2) {
+    display: inline-flex;
+    p {
+      padding: 0 5px;
     }
+  }
+  tr th:nth-child(2) {
+    text-align: left;
   }
 }

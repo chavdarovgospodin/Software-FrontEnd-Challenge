@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -9,10 +9,19 @@ require('./Table.scss');
 const title = 'Ranking table';
 
 const Table = ({ items }) => {
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(true);
+  const [data, setData] = useState([]);
   const expandHandler = () => {
     setExpand(!expand);
   };
+  useEffect(() => {
+    let dataObject = items && items.ranking && Object.values(items.ranking);
+    dataObject &&
+      dataObject.forEach((el, index) => {
+        el.rank = index + 1;
+      });
+    setData((data, dataObject));
+  }, [items]);
   return (
     <>
       <div className="table-header">
@@ -33,8 +42,19 @@ const Table = ({ items }) => {
               <th className="messages">Messages</th>
             </tr>
           </tbody>
-
-          <TableRow rank="1" name="name name" club="club name" level="10" experience="111" />
+          {data &&
+            data.slice(0, 5).map((el, index) => {
+              return (
+                <TableRow
+                  key={index}
+                  rank={el.rank}
+                  name={el.name}
+                  club={el.club}
+                  level={el.level}
+                  experience={el.experience}
+                />
+              );
+            })}
         </table>
       ) : null}
     </>

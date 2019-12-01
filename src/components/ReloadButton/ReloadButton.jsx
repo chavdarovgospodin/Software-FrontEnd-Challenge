@@ -25,7 +25,7 @@ const ReloadButton = () => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
     }
-    if (seconds === 10) {
+    if (seconds === 11) {
       reset();
     }
     return () => clearInterval(interval);

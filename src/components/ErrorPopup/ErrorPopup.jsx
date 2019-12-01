@@ -5,7 +5,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 require('./ErrorPopup.scss');
 
-const ErrorPopup = ({ errorMessage, error, popup }) => {
+const ErrorPopup = ({ errorMessage, error }) => {
   const [showPopup, setShowPopup] = useState(true);
   const showPopupHandler = () => {
     setShowPopup(false);

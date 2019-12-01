@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { IconButton } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import ArrowRightTwoToneIcon from '@material-ui/icons/ArrowRightTwoTone';
 import HourglassEmptyTwoToneIcon from '@material-ui/icons/HourglassEmptyTwoTone';
 
 require('./ReloadButton.scss');
 
-const ReloadButton = () => {
+const ReloadButton = ({ clicked, isClicked }) => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   const toggle = () => {
     setIsActive(!isActive);
   };
-
   const reset = () => {
     setSeconds(0);
     setIsActive(false);
@@ -25,11 +25,13 @@ const ReloadButton = () => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
     }
-    if (seconds === 11) {
+    if (seconds === 3) {
       reset();
+      clicked(!isClicked);
     }
     return () => clearInterval(interval);
   }, [isActive, seconds]);
+
   return (
     <div className="reload">
       <div className="reload-button">
@@ -46,6 +48,11 @@ const ReloadButton = () => {
       ) : null}
     </div>
   );
+};
+
+ReloadButton.propTypes = {
+  isClicked: PropTypes.bool,
+  clicked: PropTypes.func,
 };
 
 export default ReloadButton;

@@ -10,7 +10,7 @@ const Navigation = () => {
         <p>Home</p>
       </div>
       <div className="nav">
-        <p>Contact</p>
+        <p>City</p>
       </div>
       <div className="nav">
         <p>Arena</p>

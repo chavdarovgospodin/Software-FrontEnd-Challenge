@@ -1,4 +1,4 @@
-.btn {
+.reload {
   display: -webkit-inline-box;
   .reload-button {
     width: 191px;
@@ -13,6 +13,9 @@
       font-family: 'Open Sans';
       font-weight: 700;
     }
+  }
+  button {
+    border-radius: unset;
   }
   .progress-bar {
     padding-top: 5px;

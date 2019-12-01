@@ -25,7 +25,7 @@ const ReloadButton = ({ clicked, isClicked }) => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
     }
-    if (seconds === 3) {
+    if (seconds === 10) {
       reset();
       clicked(!isClicked);
     }

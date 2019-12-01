@@ -5,7 +5,7 @@ require('./Navigation.scss');
 
 const Navigation = () => {
   return (
-    <Tabs indicatorColor="primary" textColor="primary" centered>
+    <Tabs indicatorColor="primary" textColor="primary" centered className="navigation">
       <div className="nav">
         <p>Home</p>
       </div>
@@ -18,8 +18,8 @@ const Navigation = () => {
       <div className="nav">
         <p>Guilds</p>
       </div>
-      <div className="nav">
-        <p className="active">Ranking</p>
+      <div className="nav active">
+        <p>Ranking</p>
       </div>
       <Select className="nav" labelId="label" id="select" value="Vip">
         <MenuItem>Dropdown 1</MenuItem>

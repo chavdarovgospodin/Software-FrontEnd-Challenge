@@ -5,7 +5,7 @@ import HourglassEmptyTwoToneIcon from '@material-ui/icons/HourglassEmptyTwoTone'
 
 require('./ReloadButton.scss');
 
-const ReloadButton = ({}) => {
+const ReloadButton = () => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
 

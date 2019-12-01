@@ -8,7 +8,8 @@ require('./Table.scss');
 
 const title = 'Ranking table';
 const tableTitles = ['Rank', 'Name', 'Club', 'Level', 'Experience', 'Messages'];
-const Table = () => {
+
+const Table = ({ items }) => {
   const [expand, setExpand] = useState(false);
   const expandHandler = () => {
     setExpand(!expand);
